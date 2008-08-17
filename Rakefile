@@ -1,29 +1,16 @@
-require 'rubygems'
-require 'rake/gempackagetask'
-require 'rake/testtask'
-require 'rake/rdoctask'
+require 'echoe'
+Echoe.new('campaign-monitor-ruby') do |s|
+  s.platform = Gem::Platform::RUBY
+  s.name = 'campaign_monitor'
+  s.version = "0.1.1"
+  s.summary = 'Provides access to the Campaign Monitor API'
+  s.description = <<-EOF
+    A simple wrapper class that provides basic access to the Campaign Monitor API
+  EOF
+  s.author = 'Jordan Brock'
+  s.email = 'jordan@spintech.com.au'
+  s.rubyforge_name = 'campaignmonitor'
+  s.url = 'http://spintech.com.au/projects/plugins/campaign_monitor'
 
-# read the contents of the gemspec, eval it, and assign it to 'spec'
-# this lets us maintain all gemspec info in one place. Nice and DRY.
-spec = eval(IO.read("campaign_monitor.gemspec"))
-
-Rake::GemPackageTask.new(spec) do |pkg|
-  pkg.gem_spec = spec
-end
-
-task :install => [:package] do
-  sh %{sudo gem install pkg/#{spec.name}-#{spec.version}}
-end
-
-Rake::TestTask.new do |t|
-  t.libs << "test"
-  t.test_files = FileList['test/test*.rb']
-  t.verbose = true
-end
-
-Rake::RDocTask.new do |rd|
-  rd.main = "README.rdoc"
-  rd.rdoc_files.include("README.rdoc", "lib/**/*.rb")
-  rd.rdoc_dir = 'doc'
-  rd.options = spec.rdoc_options
+  s.has_rdoc = true
 end
