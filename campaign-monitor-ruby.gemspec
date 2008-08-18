@@ -11,22 +11,9 @@ Gem::Specification.new do |s|
   s.rubyforge_project = 'campaignmonitor'
   s.homepage = 'http://spintech.com.au/projects/plugins/campaign_monitor'
 
-  s.has_rdoc = true
-  
   s.requirements << 'none'
   s.require_path = 'lib'
-  s.extra_rdoc_files = [
-    'LICENSE',
-    'CHANGELOG',
-    'TODO',
-    'lib/campaign_monitor.rb',
-    'lib/campaign_monitor/campaign.rb',
-    'lib/campaign_monitor/list.rb',
-    'lib/campaign_monitor/client.rb',
-    'lib/campaign_monitor/result.rb',
-    'lib/campaign_monitor/subscriber.rb',
-    'README.rdoc'
-  ]
+  s.rubyforge_project = 'campaignmonitor'
 
   s.files = [
     'LICENSE',
@@ -49,10 +36,21 @@ Gem::Specification.new do |s|
 
   s.test_file = 'test/campaign_monitor_test.rb' 
 
+  s.has_rdoc = true
   s.rdoc_options << '--line-numbers' << '--inline-source' <<
                     '--title' << 'Campaign-monitor-ruby' <<
                     '--main' << 'README.rdoc'
-  
-  s.require_path = 'lib'
-  s.rubyforge_project = 'campaignmonitor'
+    
+  s.extra_rdoc_files = [
+    'LICENSE',
+    'CHANGELOG',
+    'TODO',
+    'lib/campaign_monitor.rb',
+    'lib/campaign_monitor/campaign.rb',
+    'lib/campaign_monitor/list.rb',
+    'lib/campaign_monitor/client.rb',
+    'lib/campaign_monitor/result.rb',
+    'lib/campaign_monitor/subscriber.rb',
+    'README.rdoc'
+  ]
 end
