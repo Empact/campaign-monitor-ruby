@@ -1,0 +1,3 @@
+[submodule "support/faster-xml-simple"]
+	path = support/faster-xml-simple
+	url = git://github.com/dongbin/faster-xml-simple.git
