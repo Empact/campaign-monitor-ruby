@@ -1,8 +1,3 @@
-
-$__cm_source_patterns = [
-  '[A-Z]*', 'campaign_monitor', 'lib/**/*', 'test/**/*', 'doc/**/*', 'init.rb', 'install.rb'
-]
-
 spec = Gem::Specification.new do |s|
   s.platform = Gem::Platform::RUBY
   s.name = 'campaign_monitor'
@@ -17,15 +12,28 @@ spec = Gem::Specification.new do |s|
   s.homepage = 'http://github.com/jordanbrock/campaign-monitor-ruby/wikis'
 
   s.has_rdoc = true
-  
+
   s.requirements << 'none'
   s.require_path = 'lib'
 
-  s.files = $__cm_source_patterns.inject([]) { |list, glob|
-  	list << Dir[glob].delete_if { |path|
-      File.directory?(path) or
-      path.include?('.git/')
-    }
-  }.flatten
-
+  s.files = [
+    'campaign_monitor.gemspec',
+    'CHANGELOG',
+    'init.rb',
+    'MIT-LICENSE',
+    'Rakefile',
+    'support/faster-xml-simple/test/test_helper.rb',
+    'support/faster-xml-simple/test/xml_simple_comparison_test.rb',
+    'support/faster-xml-simple/test/regression_test.rb',
+    'support/faster-xml-simple/lib/faster_xml_simple.rb',
+    'test/campaign_monitor_test.rb',
+    'TODO',
+    'lib/campaign_monitor.rb',
+    'lib/campaign_monitor/campaign.rb',
+    'lib/campaign_monitor/list.rb',
+    'lib/campaign_monitor/client.rb',
+    'lib/campaign_monitor/result.rb',
+    'lib/campaign_monitor/subscriber.rb',
+    'README.rdoc',
+    'install.rb']
 end
